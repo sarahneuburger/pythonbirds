@@ -18,10 +18,15 @@ class Pessoa:
         return f"{cls} - olhos {cls.olhos}"
 
 
+class Homem(Pessoa): #heranca simples, Homem herda de pessoa
+    pass
+
+class Mutante(Pessoa):
+    olhos = 3 #sobreponto o atributo em relação a classe Pai Pessoa
 
 if __name__ == '__main__':
-    helena = Pessoa(nome="Helena")
-    henrique = Pessoa(helena, nome="Henrique")
+    helena = Mutante(nome="Helena") #sobrescrita de dados
+    henrique = Homem(helena, nome="Henrique")
     print(Pessoa.cumprimentar(henrique))
     print(id(henrique))
     print(henrique.cumprimentar())
@@ -41,4 +46,9 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(henrique.olhos), id(helena.olhos))
     print(Pessoa.metodo_estatico(), henrique.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), henrique.nome_e_atributos_de_classe())
-
+    pessoa = Pessoa("Anonimo")
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(henrique, Pessoa))
+    print(isinstance(henrique, Homem))
+    print(helena.olhos)

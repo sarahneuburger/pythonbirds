@@ -3,9 +3,9 @@ from itertools import chain
 from atores import ATIVO
 
 
-VITORIA = 'VITORIA'
-DERROTA = 'DERROTA'
-EM_ANDAMENTO = 'EM_ANDAMENTO'
+VITORIA = "VITORIA"
+DERROTA = "DERROTA"
+EM_ANDAMENTO = "EM_ANDAMENTO"
 
 
 class Ponto():
@@ -77,9 +77,9 @@ class Fase():
         :return:
         """
 
-        if not self._possui_porco_ativo()
+        if not self._possui_porco_ativo():
             return VITORIA
-        elif self._possui_oassaros_ativos(): #método protegido
+        elif self._possui_passaros_ativos(): #método protegido
             return EM_ANDAMENTO
         else:
             return DERROTA
@@ -96,7 +96,7 @@ class Fase():
         :param tempo: Tempo de lançamento
         """
         for passaro in self._passaros:
-            if not passaro.foi_lancado()
+            if not passaro.foi_lancado():
                 passaro.lancar(angulo, tempo)
                 break
 
@@ -126,7 +126,7 @@ class Fase():
 
     def _possui_porco_ativo(self):
         for porco in self._porcos:
-            if porco.status==ATIVO
+            if porco.status == ATIVO
                 return True
         return False
 
